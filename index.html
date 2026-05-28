@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mehta Family • Switzerland 2026 • Nikunj's 50th</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --swiss-red: #D4001A;
+    --swiss-red-dark: #A30015;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --cream: #FAF6EE;
+    --dark: #1A1410;
+    --mid: #3D2E1E;
+    --text: #2C1F0E;
+    --white: #FFFFFF;
+    --alps-blue: #2E4A6B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(180deg, rgba(26,20,16,0.55) 0%, rgba(26,20,16,0.3) 50%, rgba(26,20,16,0.7) 100%),
+      url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?w=1800&q=90') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(26,20,16,0.4) 100%);
+    pointer-events: none;
+  }
+
+  .flag-ornament {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    animation: fadeDown 1s ease both;
+  }
+
+  .flag-ornament .line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.8;
+  }
+
+  .swiss-cross {
+    width: 36px;
+    height: 36px;
+    background: var(--swiss-red);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(212,0,26,0.5);
+  }
+
+  .swiss-cross::before, .swiss-cross::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 1px;
+  }
+  .swiss-cross::before { width: 6px; height: 20px; }
+  .swiss-cross::after { width: 20px; height: 6px; }
+
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    animation: fadeDown 1s 0.2s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 9vw, 120px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+    animation: fadeDown 1s 0.4s ease both;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+  }
+
+  .hero h1 .golden {
+    color: var(--gold-light);
+    font-style: italic;
+    display: block;
+    font-size: 0.65em;
+    letter-spacing: 0px;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    margin: 24px 0 40px;
+    animation: fadeDown 1s 0.6s ease both;
+    letter-spacing: 1px;
+  }
+
+  /* COUNTDOWN */
+  .countdown-wrap {
+    animation: fadeUp 1s 0.8s ease both;
+    margin-bottom: 48px;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .countdown-unit {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 16px 24px;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .countdown-unit .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+
+  .countdown-unit .lbl {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 1s 1s ease both;
+  }
+
+  .btn {
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--dark);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--swiss-red);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--swiss-red);
+  }
+
+  .section-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--mid);
+    max-width: 640px;
+  }
+
+  /* ─── BIRTHDAY BANNER ─── */
+  .birthday-banner {
+    background: linear-gradient(135deg, var(--swiss-red-dark) 0%, var(--swiss-red) 50%, #FF1A35 100%);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .birthday-banner::before {
+    content: '50';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 400px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .bday-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .bday-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 90px);
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .bday-title .name { color: var(--gold-light); font-style: italic; }
+
+  .bday-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+
+  .bday-date {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    padding: 12px 40px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  /* ─── DESTINATIONS GRID ─── */
+  .destinations-bg {
+    background: var(--dark);
+    padding: 100px 20px;
+  }
+
+  .destinations-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .dest-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .dest-header .section-title { color: white; }
+  .dest-header .section-body { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+  .dest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .dest-grid { grid-template-columns: 1fr; }
+  }
+
+  .dest-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 380px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+
+  .dest-card:first-child {
+    grid-row: span 2;
+    height: 100%;
+    min-height: 500px;
+  }
+
+  .dest-card:hover { transform: scale(1.02); }
+
+  .dest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .dest-card:hover img { transform: scale(1.08); }
+
+  .dest-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+  }
+
+  .dest-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px;
+  }
+
+  .dest-dates {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .dest-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .dest-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    font-style: italic;
+  }
+
+  .dest-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--swiss-red);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 50px;
+  }
+
+  .dest-badge.birthday {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--dark);
+  }
+
+  /* ─── ADVENTURES ─── */
+  .adventures-section {
+    padding: 100px 20px;
+    background: var(--cream);
+  }
+
+  .adventures-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .adventures-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 700px) {
+    .adventures-header { grid-template-columns: 1fr; }
+  }
+
+  .adventures-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .adventures-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .adventures-grid { grid-template-columns: 1fr; }
+  }
+
+  .adventure-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .adventure-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--swiss-red), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .adventure-card:hover::before { transform: scaleX(1); }
+
+  .adventure-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+
+  .adventure-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .adventure-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .adventure-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .adventure-card .adv-date {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--swiss-red);
+    background: rgba(212,0,26,0.06);
+    padding: 4px 12px;
+    border-radius: 50px;
+  }
+
+  /* ─── STATS ─── */
+  .stats-bg {
+    background: linear-gradient(135deg, var(--alps-blue) 0%, #1A2E45 100%);
+    padding: 80px 20px;
+  }
+
+  .stats-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stats-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 60px;
+  }
+
+  .stats-title em { color: var(--gold-light); font-style: italic; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  @media (max-width: 700px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .timeline-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .timeline-header { text-align: center; margin-bottom: 64px; }
+
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--swiss-red), var(--gold), var(--swiss-red));
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .timeline-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--swiss-red);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--swiss-red);
+  }
+
+  .timeline-dot.birthday {
+    background: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold);
+    width: 22px;
+    height: 22px;
+    left: -35px;
+  }
+
+  .timeline-date {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--swiss-red);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .timeline-item.birthday-day .timeline-date { color: var(--gold); }
+
+  .timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .timeline-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .tag-booked {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 3px 10px;
+    border-radius: 50px;
+  }
+
+  .tag-birthday {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--dark);
+    padding: 3px 10px;
+    border-radius: 50px;
+  }
+
+  /* ─── FAMILY SECTION ─── */
+  .family-section {
+    background: var(--cream);
+    padding: 100px 20px;
+  }
+
+  .family-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    .family-inner { grid-template-columns: 1fr; }
+  }
+
+  .family-photo-placeholder {
+    background: linear-gradient(135deg, #e8e0d0, #d4c9b5);
+    border-radius: 20px;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border: 2px dashed rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .family-photo-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(201,168,76,0.15), transparent 60%),
+      radial-gradient(circle at 70% 70%, rgba(212,0,26,0.08), transparent 60%);
+  }
+
+  .photo-icon { font-size: 48px; opacity: 0.5; }
+
+  .photo-placeholder-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: rgba(0,0,0,0.4);
+    font-style: italic;
+    text-align: center;
+    padding: 0 32px;
+  }
+
+  .family-content .section-body { max-width: 100%; }
+
+  .family-names {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .family-member {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .member-emoji { font-size: 24px; }
+
+  .member-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .member-info p {
+    font-size: 12px;
+    color: var(--mid);
+    font-weight: 500;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .footer-cross {
+    width: 48px;
+    height: 48px;
+    background: var(--swiss-red);
+    border-radius: 6px;
+    position: relative;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-cross::before, .footer-cross::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 1px;
+  }
+  .footer-cross::before { width: 8px; height: 26px; }
+  .footer-cross::after { width: 26px; height: 8px; }
+
+  .footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+
+  .footer-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+    opacity: 0.4;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  .footer-copy .heart { color: var(--swiss-red); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(26,20,16,0.95);
+    backdrop-filter: blur(20px);
+    padding: 14px 40px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo .mini-cross {
+    width: 22px;
+    height: 22px;
+    background: var(--swiss-red);
+    border-radius: 3px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-logo .mini-cross::before, .nav-logo .mini-cross::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .nav-logo .mini-cross::before { width: 4px; height: 14px; }
+  .nav-logo .mini-cross::after { width: 14px; height: 4px; }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    nav { padding: 16px 20px; }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="mini-cross"></div>
+    Mehta • Switzerland
+  </a>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#adventures">Adventures</a></li>
+    <li><a href="#itinerary">Itinerary</a></li>
+    <li><a href="#family">Our Family</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero section-full">
+  <div class="flag-ornament">
+    <div class="line"></div>
+    <div class="swiss-cross"></div>
+    <div class="line"></div>
+  </div>
+  <p class="hero-eyebrow">The Mehta Family • Summer 2026</p>
+  <h1>
+    Switzerland
+    <span class="golden">A Dream Come True</span>
+  </h1>
+  <p class="hero-sub">13 days • 4 destinations • 1 legendary birthday</p>
+
+  <div class="countdown-wrap">
+    <p class="countdown-label">Departing In</p>
+    <div class="countdown" id="countdown">
+      <div class="countdown-unit"><span class="num" id="cd-days">32</span><span class="lbl">Days</span></div>
+      <div class="countdown-unit"><span class="num" id="cd-hours">14</span><span class="lbl">Hours</span></div>
+      <div class="countdown-unit"><span class="num" id="cd-mins">22</span><span class="lbl">Mins</span></div>
+      <div class="countdown-unit"><span class="num" id="cd-secs">08</span><span class="lbl">Secs</span></div>
+    </div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#destinations" class="btn btn-gold">Explore the Journey</a>
+    <a href="#itinerary" class="btn btn-outline">View Itinerary</a>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- BIRTHDAY BANNER -->
+<div class="birthday-banner">
+  <span class="bday-tag">✦ A Very Special Celebration ✦</span>
+  <h2 class="bday-title">Happy <span class="name">50th</span> Birthday<br>Nikunj!</h2>
+  <p class="bday-sub">Celebrating half a century of life, love & adventure</p>
+  <div class="bday-date">🎂 July 9, 2026 • Zermatt, Switzerland</div>
+</div>
+
+<!-- DESTINATIONS -->
+<div class="destinations-bg section-full" id="destinations">
+  <div class="destinations-inner" style="padding: 100px 20px;">
+    <div class="dest-header reveal">
+      <span class="section-tag">Our Journey</span>
+      <h2 class="section-title">Four Magical<br><em>Destinations</em></h2>
+      <p class="section-body">From lakeside Lucerne to the iconic Matterhorn — each stop more breathtaking than the last.</p>
+    </div>
+
+    <div class="dest-grid">
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?w=800&q=85" alt="Zermatt Matterhorn" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-badge birthday">🎂 Birthday!</div>
+        <div class="dest-card-content">
+          <span class="dest-dates">July 8 – 11</span>
+          <div class="dest-name">Zermatt</div>
+          <div class="dest-desc">The Matterhorn. The birthday. The memory of a lifetime.</div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85" alt="Grindelwald Alps" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-badge">Booked ✓</div>
+        <div class="dest-card-content">
+          <span class="dest-dates">July 4 – 8</span>
+          <div class="dest-name">Grindelwald</div>
+          <div class="dest-desc">Jungfraujoch, Eiger & alpine adventure</div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&q=85" alt="Lucerne Chapel Bridge" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-badge">Booked ✓</div>
+        <div class="dest-card-content">
+          <span class="dest-dates">July 1 – 4</span>
+          <div class="dest-name">Lucerne</div>
+          <div class="dest-desc">Chapel Bridge, Mount Pilatus & Lake Lucerne</div>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1543739012-b8a7e43b6e65?w=800&q=85" alt="Zurich Switzerland" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-content">
+          <span class="dest-dates">July 11 – 13</span>
+          <div class="dest-name">Zurich</div>
+          <div class="dest-desc">Rhine Falls, Lindt chocolate & the grand finale</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADVENTURES -->
+<div class="adventures-section section-full" id="adventures">
+  <div class="adventures-inner">
+    <div class="adventures-header">
+      <div class="reveal">
+        <span class="section-tag">What Awaits Us</span>
+        <h2 class="section-title">Epic<br><em>Adventures</em><br>Ahead</h2>
+      </div>
+      <div class="reveal">
+        <p class="section-body">From the world's steepest cogwheel railway to the highest cable car in the Alps — every day is an adventure the Mehta family will never forget.</p>
+      </div>
+    </div>
+
+    <div class="adventures-grid">
+      <div class="adventure-card reveal">
+        <span class="adventure-icon">🏔️</span>
+        <h3>Jungfraujoch</h3>
+        <p>Top of Europe at 11,333 ft. Ice Palace, Sphinx Observatory & the most spectacular glacier views in the Alps.</p>
+        <span class="adv-date">July 6 • Booked ✓</span>
+      </div>
+
+      <div class="adventure-card reveal">
+        <span class="adventure-icon">🚂</span>
+        <h3>Mount Pilatus</h3>
+        <p>The world's steepest cogwheel railway at 48°. Golden Round Trip — boat, train, gondola, all in one day.</p>
+        <span class="adv-date">July 2 • Booked ✓</span>
+      </div>
+
+      <div class="adventure-card reveal">
+        <span class="adventure-icon">🎂</span>
+        <h3>Gornergrat Railway</h3>
+        <p>Birthday sunrise at 10,135 ft. The Matterhorn in golden morning light. Priority boarding. Right side seats. Unforgettable.</p>
+        <span class="adv-date">July 9 • Booked ✓</span>
+      </div>
+
+      <div class="adventure-card reveal">
+        <span class="adventure-icon">🚡</span>
+        <h3>Matterhorn Glacier Paradise</h3>
+        <p>The highest cable car in the Alps at 12,530 ft. A glacier palace carved inside the mountain awaits.</p>
+        <span class="adv-date">July 9 • Coming Soon</span>
+      </div>
+
+      <div class="adventure-card reveal">
+        <span class="adventure-icon">🚢</span>
+        <h3>Brienz Rothorn Steam Train</h3>
+        <p>A 100-year-old steam locomotive chugging up to 7,362 ft. Pure Swiss magic for the whole family.</p>
+        <span class="adv-date">July 3 • Booked ✓</span>
+      </div>
+
+      <div class="adventure-card reveal">
+        <span class="adventure-icon">🌊</span>
+        <h3>Rhine Falls & Lindt Chalet</h3>
+        <p>Europe's most powerful waterfall + the world's largest chocolate museum. The perfect final day!</p>
+        <span class="adv-date">July 12 • Zurich</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bg section-full">
+  <div class="stats-inner">
+    <h2 class="stats-title reveal">The Trip <em>By Numbers</em></h2>
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-num">13</span>
+        <span class="stat-label">Days in Switzerland</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Destinations</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">12</span>
+        <span class="stat-label">Nights in hotels</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">50</span>
+        <span class="stat-label">Years to celebrate</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Mountains conquered</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">12K</span>
+        <span class="stat-label">Ft above sea level</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Family adventurers</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Memories made</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-section section-full" id="itinerary">
+  <div class="timeline-inner">
+    <div class="timeline-header reveal">
+      <span class="section-tag">Day by Day</span>
+      <h2 class="section-title">The <em>Itinerary</em></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">June 30</span>
+        <h3>Departure Day 🛫 <span class="tag-booked">Booked</span></h3>
+        <p>PHX → DFW (AA1139, 7:30am) → ZRH (AA200, 2:35pm). The adventure begins from Phoenix Sky Harbor. Next stop — Switzerland!</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">July 1 – 4</span>
+        <h3>Lucerne 🏙️ <span class="tag-booked">Booked</span></h3>
+        <p>AMERON Luzern Hotel Flora. Chapel Bridge, Mount Pilatus Golden Round Trip (Jul 2), Brienz Rothorn Steam Train (Jul 3), Swiss Museum of Transport & Old Town exploring.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">July 4 – 8</span>
+        <h3>Grindelwald 🏔️ <span class="tag-booked">Booked</span></h3>
+        <p>Bergwelt Grindelwald Alpine Design Resort. Jungfraujoch Top of Europe (Jul 6, booked 08:41 arrival!), First Cliff Walk & Glider, Männlichen Panorama Trail. Stop at Heidi's Photo Chalet in Interlaken on the way!</p>
+      </div>
+
+      <div class="timeline-item birthday-day reveal">
+        <div class="timeline-dot birthday"></div>
+        <span class="timeline-date">July 9 — THE BIG DAY!</span>
+        <h3>🎂 Nikunj's 50th Birthday! <span class="tag-birthday">Birthday</span></h3>
+        <p>Schweizerhof Zermatt. Gornergrat Railway at 08:24 (Priority Boarding booked!). Matterhorn Glacier Paradise. Birthday lunch at Chez Vrony. Stellisee Lake. Birthday dinner at Golden India Zermatt. Room decorated with cake, flowers & chocolate box. 🎂🏔️</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">July 8 – 11</span>
+        <h3>Zermatt 🗻 <span class="tag-booked">Booked</span></h3>
+        <p>Schweizerhof Zermatt — just 100m from Gornergrat station! Car-free village, Matterhorn views, Sunnegga Paradise & golden evenings strolling the magical village.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">July 11 – 13</span>
+        <h3>Zurich ✈️ <span class="tag-booked">Booked</span></h3>
+        <p>Hilton Zurich Airport Family Suite. Rhine Falls boat ride, Lindt Home of Chocolate, Lake Zurich cruise, Bahnhofstrasse shopping & the best Swiss chocolate to bring home!</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">July 13</span>
+        <h3>Homeward Bound 🛬</h3>
+        <p>ZRH → LHR (AA6860, 7:15am) → PHX (AA195, 11:00am). Arriving home in Phoenix at 1:55pm with hearts full and bags full of Swiss chocolate!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY -->
+<div class="family-section section-full" id="family">
+  <div class="family-inner" style="padding: 0 20px;">
+    <div class="family-photo-placeholder reveal">
+      <span class="photo-icon">📸</span>
+      <p class="photo-placeholder-text">The Mehta Family Photo Coming Soon!</p>
+    </div>
+
+    <div class="family-content reveal">
+      <span class="section-tag">The Adventurers</span>
+      <h2 class="section-title">The <em>Mehta</em><br>Family</h2>
+      <p class="section-body">A family of four from Phoenix, Arizona, embarking on the adventure of a lifetime — through the Swiss Alps, to the top of Europe, and to the iconic Matterhorn to celebrate a milestone birthday.</p>
+
+      <div class="family-names">
+        <div class="family-member">
+          <span class="member-emoji">👨</span>
+          <div class="member-info">
+            <h4>Nikunj Mehta</h4>
+            <p>The Birthday Boy • Turning 50 on July 9th 🎂</p>
+          </div>
+        </div>
+        <div class="family-member">
+          <span class="member-emoji">👩</span>
+          <div class="member-info">
+            <h4>Sonal Mehta</h4>
+            <p>The Planner Extraordinaire</p>
+          </div>
+        </div>
+        <div class="family-member">
+          <span class="member-emoji">👦</span>
+          <div class="member-info">
+            <h4>Aarush Mehta</h4>
+            <p>The Adventurous Son • Age 16</p>
+          </div>
+        </div>
+        <div class="family-member">
+          <span class="member-emoji">👧</span>
+          <div class="member-info">
+            <h4>Aarna Mehta</h4>
+            <p>The Explorer • Age 14</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-cross"></div>
+  <h3 class="footer-title">Mehta Family • Switzerland 2026</h3>
+  <p class="footer-sub">Nikunj's 50th Birthday Adventure</p>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">Made with <span class="heart">♥</span> for the Mehta Family • Phoenix, Arizona → Swiss Alps</p>
+</footer>
+
+<script>
+  // COUNTDOWN
+  function updateCountdown() {
+    const departure = new Date('2026-06-30T07:30:00-07:00');
+    const now = new Date();
+    const diff = departure - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // NAV SCROLL
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // REVEAL ON SCROLL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
