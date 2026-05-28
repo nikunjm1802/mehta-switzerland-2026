@@ -828,7 +828,82 @@
     font-weight: 500;
   }
 
-  /* ─── FOOTER ─── */
+  .family-photo-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+  }
+
+  /* ─── PHOTO GALLERY ─── */
+  .gallery-section {
+    background: var(--dark);
+    padding: 100px 20px;
+  }
+
+  .gallery-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .gallery-header .section-title { color: white; }
+  .gallery-header .section-body { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  @media (max-width: 700px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
+  .gallery-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-photo:hover img { transform: scale(1.04); }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  }
+
+  .gallery-caption h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .gallery-caption p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+  }
   footer {
     background: var(--dark);
     padding: 60px 20px;
@@ -1268,15 +1343,14 @@
 <!-- FAMILY -->
 <div class="family-section section-full" id="family">
   <div class="family-inner" style="padding: 0 20px;">
-    <div class="family-photo-placeholder reveal">
-      <span class="photo-icon">📸</span>
-      <p class="photo-placeholder-text">The Mehta Family Photo Coming Soon!</p>
-    </div>
+    <div class="family-photo-wrap reveal">
+        <img src="family-niagara.png" alt="The Mehta Family at Niagara Falls" style="width:100%; height:100%; object-fit:cover; border-radius:20px; display:block;">
+      </div>
 
     <div class="family-content reveal">
       <span class="section-tag">The Adventurers</span>
       <h2 class="section-title">The <em>Mehta</em><br>Family</h2>
-      <p class="section-body">A family of four from Phoenix, Arizona, embarking on the adventure of a lifetime — through the Swiss Alps, to the top of Europe, and to the iconic Matterhorn to celebrate a milestone birthday.</p>
+      <p class="section-body">A family of four from Phoenix, Arizona, with a passion for travel and adventure — from Niagara Falls to the Galapagos Islands, and now the Swiss Alps to celebrate a milestone 50th birthday!</p>
 
       <div class="family-names">
         <div class="family-member">
@@ -1304,7 +1378,48 @@
           <span class="member-emoji">👧</span>
           <div class="member-info">
             <h4>Aarna Mehta</h4>
-            <p>The Explorer Daughter • Age 14</p>
+            <p>The Explorer • Age 14</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery-section section-full">
+  <div class="gallery-inner">
+    <div class="gallery-header reveal">
+      <span class="section-tag">Our Adventures</span>
+      <h2 class="section-title" style="color:white;">The <em>Mehta Family</em><br>Around the World</h2>
+      <p class="section-body">From Niagara Falls to the Galapagos Islands — this family was born to explore. Switzerland is next! 🇨🇭</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Niagara Falls - large left -->
+      <div class="gallery-photo reveal" style="height: 600px;">
+        <img src="family-niagara.png" alt="Mehta Family at Niagara Falls">
+        <div class="gallery-caption">
+          <h4>Niagara Falls, Canada 🇨🇦</h4>
+          <p>The whole Mehta crew conquering North America's most iconic waterfall</p>
+        </div>
+      </div>
+
+      <!-- Right column — two stacked -->
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="gallery-photo reveal" style="height: 380px;">
+          <img src="family-galapagos.jpeg" alt="Mehta Family at Galapagos Islands">
+          <div class="gallery-caption">
+            <h4>Galapagos Islands, Ecuador 🇪🇨</h4>
+            <p>Marina Bartolomé — adventure runs in the family!</p>
+          </div>
+        </div>
+
+        <div class="gallery-photo reveal" style="height: 200px;">
+          <img src="couple-teton.jpeg" alt="Nikunj and Sonal at Grand Teton">
+          <div class="gallery-caption">
+            <h4>Grand Teton, Wyoming 🏔️</h4>
+            <p>Nikunj & Sonal — partners in adventure</p>
           </div>
         </div>
       </div>
